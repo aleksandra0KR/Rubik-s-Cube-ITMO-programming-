@@ -33,17 +33,35 @@ public:
             up.push_back({});
             down.push_back({});
             for(int j = 0; j < size; j++){
-                left[i].push_back(ORANGE);
-                front[i].push_back(BLUE);
-                right[i].push_back(RED);
-                back[i].push_back(GREEN);
-                up[i].push_back(YELLOW);
-                down[i].push_back(WHITE);
+                left[i].push_back(GREEN);
+                front[i].push_back(WHITE);
+                right[i].push_back(BLUE);
+                back[i].push_back(YELLOW);
+                up[i].push_back(ORANGE);
+                down[i].push_back(RED);
             }
         }
     }
+    void random_situation();
     void fill_from_the_file(const char* name_of_the_file);
     void show();
+    void show_to_concol();
     bool has_all_colors();
     bool check();
+
+
+    void right_rotation_90();
+    void right_rotation_against_90();
+    void left_rotation_90();
+    void left_rotation_against_90();
+
+    void front_rotation_90();
+    void front_rotation_against_90();
+    void back_rotation_90();
+    void back_rotation_against_90();
+
+    void down_rotation_90();
+    void down_rotation_against_90();
+    void up_rotation_90();
+    void up_rotation_against_90();
 };
