@@ -427,7 +427,7 @@ void Cube::down_rotation_against_90() {
     cout << "down rotation against is completed\n";
 }
 
-void Cube::up_rotation_90() { ///
+void Cube::up_rotation_against_90() { ///
     colors temp_front00 = front[0][0];
     colors temp_front01 = front[0][1];
     colors temp_front02 = front[0][2];
@@ -466,10 +466,10 @@ void Cube::up_rotation_90() { ///
     up[2][1] = temp[1][0];
     up[2][2] = temp[2][0];
 
-    cout << "up rotation is completed\n";
+    cout << "up rotation against is completed\n";
 }
 
-void Cube::up_rotation_against_90() {
+void Cube::up_rotation_90() {
     colors temp_front00 = front[0][0];
     colors temp_front01 = front[0][1];
     colors temp_front02 = front[0][2];
@@ -508,5 +508,5 @@ void Cube::up_rotation_against_90() {
     up[2][1] = temp[1][2];
     up[2][2] = temp[0][2];
 
-    cout << "up rotation against is completed\n";
+    cout << "up rotation is completed\n";
 }
