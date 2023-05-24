@@ -64,4 +64,26 @@ public:
     void down_rotation_against_90();
     void up_rotation_90();
     void up_rotation_against_90();
+
+    void Front_pif_paf();
+    void Back_pif_paf();
+    void Right_pif_paf();
+    void Left_pif_paf();
+    bool check_edge();
+    bool oneCornerCheck();
+    bool cornerCheck();
+    void flower();
+    void right_cross();
+    void first_layer();
+    void second();
+    bool check_orange_right_cross();
+    bool check_middle();
+    bool assembly_check();
+    void third();
+    bool check_upper_edges();
+    bool orange_cross_check();
+    void first_up_corner();
+    void up_second_corner();
+    void third_up_corner();
+    void fourth_up_corner();
 };
