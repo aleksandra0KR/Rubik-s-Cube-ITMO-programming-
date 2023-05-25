@@ -30,113 +30,102 @@ void Cube::Left_pif_paf() {
 }
 
 
-void Cube::flower(){
-    while(up[0][1] != RED or up[1][0] != RED or up[1][2] != RED or up[2][1] != RED) {
+void Cube::flower() {
+    while (up[0][1] != RED or up[1][0] != RED or up[1][2] != RED or up[2][1] != RED) {
 
-        if (front[1][2] == RED && up[1][2] != RED) {
+        if (front[1][2] == RED and up[1][2] != RED) {
             right_rotation_90();
-        }
-        else if (front[1][2] == RED) {
+        } else if (front[1][2] == RED) {
             while (up[1][2] == RED) {
                 up_rotation_90();
             }
             right_rotation_90();
         }
 
-        if (front[1][0] == RED && up[1][0] != RED ) {
+        if (front[1][0] == RED and up[1][0] != RED) {
             left_rotation_against_90();
-        }
-        else if (front[1][0] == RED) {
+        } else if (front[1][0] == RED) {
             while (up[1][0] == RED) {
                 up_rotation_90();
             }
             left_rotation_against_90();
         }
 
-        if (down[1][0] == RED && up[1][0] != RED) {
-            for(int i = 0; i < 2; i++)  left_rotation_against_90();
-        }
-        else if (down[1][0] ==RED) {
-            while (up[1][0] ==RED) {
+        if (down[1][0] == RED and up[1][0] != RED) {
+            for (int i = 0; i < 2; i++) left_rotation_against_90();
+        } else if (down[1][0] == RED) {
+            while (up[1][0] == RED) {
                 up_rotation_90();
             }
-            for(int i = 0; i < 2; i++)  left_rotation_against_90();
+            for (int i = 0; i < 2; i++) left_rotation_against_90();
         }
 
-        if (down[1][2] == RED && up[1][2] != RED) {
-            for(int i = 0; i < 2; i++)  right_rotation_90();
-        }
-        else if (down[1][2] == RED) {
+        if (down[1][2] == RED and up[1][2] != RED) {
+            for (int i = 0; i < 2; i++) right_rotation_90();
+        } else if (down[1][2] == RED) {
             while (up[1][2] == RED) {
                 up_rotation_90();
             }
-            for(int i = 0; i < 2; i++)  right_rotation_90();
+            for (int i = 0; i < 2; i++) right_rotation_90();
         }
 
-        if (left[1][0] == RED && up[0][1] != RED) {
+        if (left[1][0] == RED and up[0][1] != RED) {
             back_rotation_against_90();
-        }
-        else if (left[1][0] == RED) {
+        } else if (left[1][0] == RED) {
             while (up[0][1] == RED) {
                 up_rotation_90();
             }
             back_rotation_against_90();
         }
 
-        if (left[1][2] == RED && up[2][1] != RED) {
+        if (left[1][2] == RED and up[2][1] != RED) {
             front_rotation_90();
-        }
-        else if (left[1][2] == RED) {
+        } else if (left[1][2] == RED) {
             while (up[2][1] == RED) {
                 up_rotation_90();
             }
             front_rotation_90();
         }
 
-        if (right[1][0] == RED && up[2][1] != RED) {
+        if (right[1][0] == RED and up[2][1] != RED) {
             front_rotation_against_90();
-        }
-        else if (right[1][0] == RED) {
+        } else if (right[1][0] == RED) {
             while (up[2][1] == RED) {
                 up_rotation_90();
             }
             front_rotation_against_90();
         }
 
-        if (right[1][2] == RED && up[0][1] != RED) {
+        if (right[1][2] == RED and up[0][1] != RED) {
             back_rotation_90();
-        }
-        else if (right[1][2] == RED) {
+        } else if (right[1][2] == RED) {
             while (up[0][1] == RED) {
                 up_rotation_90();
             }
             back_rotation_90();
         }
 
-        if (back[1][0] == RED && up[1][2] != RED) {
+        if (back[1][0] == RED and up[1][2] != RED) {
             right_rotation_against_90();
-        }
-        else if (back[1][0] == RED) {
+        } else if (back[1][0] == RED) {
             while (up[1][2] == RED) {
                 up_rotation_90();
             }
             right_rotation_against_90();
         }
 
-        if (back[1][2] == RED && up[1][0] != RED) {
+        if (back[1][2] == RED and up[1][0] != RED) {
             left_rotation_90();
-        }
-        else if (back[1][2] ==RED) {
+        } else if (back[1][2] == RED) {
             while (up[1][0] == RED) {
                 up_rotation_90();
             }
             left_rotation_90();
         }
 
-        if (front[0][1] == RED && up[1][2] != RED) {
-            for(int i = 0; i < 2; i++)  front_rotation_90();
-        }
-        else if (front[0][1] == RED) {
+        if (front[0][1] == RED and up[1][2] != RED) {
+            for (int i = 0; i < 2; i++) front_rotation_90();
+        } else if (front[0][1] == RED) {
             while (up[1][2] == RED) {
                 up_rotation_90();
             }
@@ -144,308 +133,343 @@ void Cube::flower(){
             right_rotation_90();
         }
 
-        if (front[2][1] == RED && up[1][2] != RED) {
+        if (front[2][1] == RED and up[1][2] != RED) {
+            front_rotation_against_90();
+            right_rotation_90();
+        } else if (front[2][1] == RED) {
+            while (up[1][2] == RED) {
+                up_rotation_90();
+            }
             front_rotation_against_90();
             right_rotation_90();
         }
-        else if (front[2][1] == RED) {
-            while (up[1][2] == RED) {
-                up_rotation_90();
-            }
-            front_rotation_against_90();
-            right_rotation_90();
-        }
 
-        if (left[0][1] == RED && up[2][1] != RED) {
+        if (left[0][1] == RED and up[2][1] != RED) {
             left_rotation_90();
             front_rotation_90();
-        }
-        else if (left[0][1] == RED) {
-            while (up[2][1] ==  RED) {
-                up_rotation_90();
-            }
-            left_rotation_90();
-            front_rotation_90();
-        }
-
-        if (left[2][1] == RED && up[0][1] !=RED) {
-            left_rotation_90();
-            back_rotation_against_90();
-        }
-        else if (left[2][1] == RED) {
-            while (up[0][1] == RED) {
-                up_rotation_90();
-            }
-            left_rotation_90();
-            back_rotation_against_90();
-        }
-
-        if (right[0][1] == RED && up[0][1] != RED) {
-            right_rotation_90();
-            back_rotation_90();
-        }
-        else if (right[0][1] == RED) {
-            while (up[0][1] == RED) {
-                up_rotation_90();
-            }
-            right_rotation_90();
-            back_rotation_90();
-        }
-
-        if (right[2][1] == RED && up[1][2] != RED) {
-            right_rotation_90();
-        }
-        else if (right[2][1] == RED) {
-            while (up[1][2] == RED) {
-                up_rotation_90();
-            }
-            right_rotation_90();
-        }
-
-        if (back[0][1] == RED && up[0][1] != RED) {
-            back_rotation_90();
-        }
-        else if (back[0][1] == RED) {
-            while (up[0][1] == RED) {
-                up_rotation_90();
-            }
-            back_rotation_90();
-        }
-
-        if (back[2][1] == RED && up[0][1] != RED) {
-            back_rotation_90();
-        }
-        else if (back[2][1] == RED) {
-            while (up[0][1] == RED) {
-                up_rotation_90();
-            }
-            back_rotation_90();
-        }
-
-        if (down[0][1] == RED && up[2][1] != RED) {
-            for(int i = 0; i < 2; i++) front_rotation_90();
-        }
-        else if (down[0][1] == RED) {
+        } else if (left[0][1] == RED) {
             while (up[2][1] == RED) {
                 up_rotation_90();
             }
-            for(int i = 0; i < 2; i++) front_rotation_90();
+            left_rotation_90();
+            front_rotation_90();
         }
 
-        if (down[2][1] == RED && up[0][1] != RED) {
-            for(int i = 0; i < 2; i++)  back_rotation_90();
-        }
-        else if (down[2][1] == RED) {
+        if (left[2][1] == RED and up[0][1] != RED) {
+            left_rotation_90();
+            back_rotation_against_90();
+        } else if (left[2][1] == RED) {
             while (up[0][1] == RED) {
                 up_rotation_90();
             }
-            for(int i = 0; i < 2; i++)  back_rotation_90();
+            left_rotation_90();
+            back_rotation_against_90();
+        }
+
+        if (right[0][1] == RED and up[0][1] != RED) {
+            right_rotation_90();
+            back_rotation_90();
+        } else if (right[0][1] == RED) {
+            while (up[0][1] == RED) {
+                up_rotation_90();
+            }
+            right_rotation_90();
+            back_rotation_90();
+        }
+
+        if (right[2][1] == RED and up[1][2] != RED) {
+            right_rotation_90();
+        } else if (right[2][1] == RED) {
+            while (up[1][2] == RED) {
+                up_rotation_90();
+            }
+            right_rotation_90();
+        }
+
+        if (back[0][1] == RED and up[0][1] != RED) {
+            back_rotation_90();
+        } else if (back[0][1] == RED) {
+            while (up[0][1] == RED) {
+                up_rotation_90();
+            }
+            back_rotation_90();
+        }
+
+        if (back[2][1] == RED and up[0][1] != RED) {
+            back_rotation_90();
+        } else if (back[2][1] == RED) {
+            while (up[0][1] == RED) {
+                up_rotation_90();
+            }
+            back_rotation_90();
+        }
+
+        if (down[0][1] == RED and up[2][1] != RED) {
+            for (int i = 0; i < 2; i++) front_rotation_90();
+        } else if (down[0][1] == RED) {
+            while (up[2][1] == RED) {
+                up_rotation_90();
+            }
+            for (int i = 0; i < 2; i++) front_rotation_90();
+        }
+
+        if (down[2][1] == RED and up[0][1] != RED) {
+            for (int i = 0; i < 2; i++) back_rotation_90();
+        } else if (down[2][1] == RED) {
+            while (up[0][1] == RED) {
+                up_rotation_90();
+            }
+            for (int i = 0; i < 2; i++) back_rotation_90();
         }
 
     }
 }
 
 void Cube::right_cross() {
-    if (front[0][1] != WHITE or  up[2][1] != RED) {
-        while (front[0][1] != WHITE or up[2][1] != RED ) {
+    if (front[0][1] != WHITE or up[2][1] != RED) {
+        while (front[0][1] != WHITE or up[2][1] != RED) {
             up_rotation_90();
         }
-        for(int i = 0; i < 2; i++)  front_rotation_90();
-    }
-    else if (up[2][1] == RED or front[0][1] == WHITE) {
-        for(int i = 0; i < 2; i++) front_rotation_90();
+        for (int i = 0; i < 2; i++) front_rotation_90();
+    } else if (up[2][1] == RED or front[0][1] == WHITE) {
+        for (int i = 0; i < 2; i++) front_rotation_90();
     }
 
     if (up[1][2] != RED or right[0][1] != BLUE) {
         while (up[1][2] != RED or right[0][1] != BLUE) {
             up_rotation_90();
         }
-        for(int i = 0; i < 2; i++)  right_rotation_90();
-    }
-    else if (up[1][2] == RED or right[0][1] == BLUE) {
-        for(int i = 0; i < 2; i++)  right_rotation_90();
+        for (int i = 0; i < 2; i++) right_rotation_90();
+    } else if (up[1][2] == RED or right[0][1] == BLUE) {
+        for (int i = 0; i < 2; i++) right_rotation_90();
     }
 
     if (up[0][1] != RED or back[0][1] != YELLOW) {
-        while (up[0][1] != RED || back[0][1] != YELLOW) {
+        while (up[0][1] != RED or back[0][1] != YELLOW) {
             up_rotation_90();
         }
-        for(int i = 0; i < 2; i++) back_rotation_90();
-    }
-    else if (up[0][1] == RED or back[0][1] == YELLOW) {
-        for(int i = 0; i < 2; i++)  back_rotation_90();
+        for (int i = 0; i < 2; i++) back_rotation_90();
+    } else if (up[0][1] == RED or back[0][1] == YELLOW) {
+        for (int i = 0; i < 2; i++) back_rotation_90();
     }
 
     if (up[1][0] != RED or left[0][1] != GREEN) {
         while (up[1][0] != RED or left[0][1] != GREEN) {
             up_rotation_90();
         }
-        for(int i = 0; i < 2; i++)  left_rotation_90();
-    }
-    else if (up[1][0] == RED or left[0][1] == GREEN) {
-        for(int i = 0; i < 2; i++)  left_rotation_90();
+        for (int i = 0; i < 2; i++) left_rotation_90();
+    } else if (up[1][0] == RED or left[0][1] == GREEN) {
+        for (int i = 0; i < 2; i++) left_rotation_90();
     }
 }
 
-void Cube::up_second_corner(){
+void Cube::up_second_corner() {
     //  второй угол сверху
-    if ((right[0][2] == RED and back[0][0] == BLUE and up[0][2] == WHITE) or (right[0][2] == RED and back[0][0] == WHITE and up[0][2] == BLUE)
-        or (right[0][2] == WHITE and back[0][0] == RED and up[0][2] == BLUE) or (right[0][2] == WHITE and back[0][0] == BLUE and up[0][2] == RED)
-        or (right[0][2] == BLUE and back[0][0] == RED and up[0][2] == WHITE) or (right[0][2] == BLUE and back[0][0] == WHITE and up[0][2] == RED)) {
+    if ((right[0][2] == RED and back[0][0] == BLUE and up[0][2] == WHITE) or
+        (right[0][2] == RED and back[0][0] == WHITE and up[0][2] == BLUE)
+        or (right[0][2] == WHITE and back[0][0] == RED and up[0][2] == BLUE) or
+        (right[0][2] == WHITE and back[0][0] == BLUE and up[0][2] == RED)
+        or (right[0][2] == BLUE and back[0][0] == RED and up[0][2] == WHITE) or
+        (right[0][2] == BLUE and back[0][0] == WHITE and up[0][2] == RED)) {
         up_rotation_90();
-        while (front[2][2] != WHITE || right[2][0] != BLUE || down[0][2] != RED) {
+        while (front[2][2] != WHITE or right[2][0] != BLUE or down[0][2] != RED) {
             Right_pif_paf();
         }
     }
 
-    if ((right[0][2] == WHITE && back[0][0] == GREEN && up[0][2] == RED) || (right[0][2] == WHITE && back[0][0] == RED && up[0][2] == GREEN)
-        || (right[0][2] == RED && back[0][0] == WHITE && up[0][2] == GREEN) || (right[0][2] == RED && back[0][0] == GREEN && up[0][2] == WHITE)
-        || (right[0][2] == GREEN && back[0][0] == RED && up[0][2] == WHITE) || (right[0][2] == GREEN && back[0][0] == WHITE && up[0][2] == RED)) {
-        for(int i = 0; i < 2; i++)  up_rotation_90();
-        while (front[2][0] != WHITE || left[2][2] != GREEN || down[0][0] != RED) {
+    if ((right[0][2] == WHITE and back[0][0] == GREEN and up[0][2] == RED) or
+        (right[0][2] == WHITE and back[0][0] == RED and up[0][2] == GREEN)
+        or (right[0][2] == RED and back[0][0] == WHITE and up[0][2] == GREEN) or
+        (right[0][2] == RED and back[0][0] == GREEN and up[0][2] == WHITE)
+        or (right[0][2] == GREEN and back[0][0] == RED and up[0][2] == WHITE) or
+        (right[0][2] == GREEN and back[0][0] == WHITE and up[0][2] == RED)) {
+        for (int i = 0; i < 2; i++) up_rotation_90();
+        while (front[2][0] != WHITE or left[2][2] != GREEN or down[0][0] != RED) {
             Front_pif_paf();
         }
     }
 
-    if ((right[0][2] == BLUE && back[0][0] == YELLOW && up[0][2] == RED) || (right[0][2] == BLUE && back[0][0] == RED && up[0][2] == YELLOW)
-        || (right[0][2] == RED && back[0][0] == BLUE && up[0][2] == YELLOW) || (right[0][2] == RED && back[0][0] == YELLOW && up[0][2] == BLUE)
-        || (right[0][2] == YELLOW && back[0][0] == BLUE && up[0][2] == RED) || (right[0][2] == YELLOW && back[0][0] == RED && up[0][2] == BLUE)) {
-        while (back[2][0] != YELLOW || right[2][2] != BLUE || down[2][2] != RED) {
+    if ((right[0][2] == BLUE and back[0][0] == YELLOW and up[0][2] == RED) or
+        (right[0][2] == BLUE and back[0][0] == RED and up[0][2] == YELLOW)
+        or (right[0][2] == RED and back[0][0] == BLUE and up[0][2] == YELLOW) or
+        (right[0][2] == RED and back[0][0] == YELLOW and up[0][2] == BLUE)
+        or (right[0][2] == YELLOW and back[0][0] == BLUE and up[0][2] == RED) or
+        (right[0][2] == YELLOW and back[0][0] == RED and up[0][2] == BLUE)) {
+        while (back[2][0] != YELLOW or right[2][2] != BLUE or down[2][2] != RED) {
             Back_pif_paf();
         }
     }
 
-    if ((right[0][2] == RED && back[0][0] == GREEN && up[0][2] == YELLOW) || (right[0][2] == RED && back[0][0] == YELLOW && up[0][2] == GREEN)
-        || (right[0][2] == YELLOW && back[0][0] == RED && up[0][2] == GREEN) || (right[0][2] == YELLOW && back[0][0] == GREEN && up[0][2] == RED)
-        || (right[0][2] == GREEN && back[0][0] == YELLOW && up[0][2] == RED) || (right[0][2] == GREEN && back[0][0] == RED && up[0][2] == YELLOW)) {
+    if ((right[0][2] == RED and back[0][0] == GREEN and up[0][2] == YELLOW) or
+        (right[0][2] == RED and back[0][0] == YELLOW and up[0][2] == GREEN)
+        or (right[0][2] == YELLOW and back[0][0] == RED and up[0][2] == GREEN) or
+        (right[0][2] == YELLOW and back[0][0] == GREEN and up[0][2] == RED)
+        or (right[0][2] == GREEN and back[0][0] == YELLOW and up[0][2] == RED) or
+        (right[0][2] == GREEN and back[0][0] == RED and up[0][2] == YELLOW)) {
         up_rotation_against_90();
-        while (back[2][2] != YELLOW || left[2][0] != GREEN || down[2][0] != RED) {
+        while (back[2][2] != YELLOW or left[2][0] != GREEN or down[2][0] != RED) {
             Left_pif_paf();
         }
     }
 }
 
-void Cube::first_up_corner(){
+void Cube::first_up_corner() {
     // первый угол сверху
-    if ((front[0][2] == RED && right[0][0] == BLUE && up[2][2] == WHITE) || (front[0][2] == RED && right[0][0] == WHITE && up[2][2] == BLUE)
-        || (front[0][2] == WHITE && right[0][0] == RED && up[2][2] == BLUE) || (front[0][2] == WHITE && right[0][0] == BLUE && up[2][2] == RED)
-        || (front[0][2] == BLUE && right[0][0] == RED && up[2][2] == WHITE) || (front[0][2] == BLUE && right[0][0] == WHITE && up[2][2] == RED)) {
-        while (front[2][2] != WHITE || right[2][0] != BLUE || down[0][2] != RED) {
+    if ((front[0][2] == RED and right[0][0] == BLUE and up[2][2] == WHITE) or
+        (front[0][2] == RED and right[0][0] == WHITE and up[2][2] == BLUE)
+        or (front[0][2] == WHITE and right[0][0] == RED and up[2][2] == BLUE) or
+        (front[0][2] == WHITE and right[0][0] == BLUE and up[2][2] == RED)
+        or (front[0][2] == BLUE and right[0][0] == RED and up[2][2] == WHITE) or
+        (front[0][2] == BLUE and right[0][0] == WHITE and up[2][2] == RED)) {
+        while (front[2][2] != WHITE or right[2][0] != BLUE or down[0][2] != RED) {
             Right_pif_paf();
         }
     }
 
-    if ((front[0][2] == WHITE && right[0][0] == GREEN && up[2][2] == RED) || (front[0][2] == WHITE && right[0][0] == RED && up[2][2] == GREEN)
-        || (front[0][2] == RED && right[0][0] == WHITE && up[2][2] == GREEN) || (front[0][2] == RED && right[0][0] == GREEN && up[2][2] == WHITE)
-        || (front[0][2] == GREEN && right[0][0] == RED && up[2][2] == WHITE) || (front[0][2] == GREEN && right[0][0] == WHITE && up[2][2] == RED)) {
+    if ((front[0][2] == WHITE and right[0][0] == GREEN and up[2][2] == RED) or
+        (front[0][2] == WHITE and right[0][0] == RED and up[2][2] == GREEN)
+        or (front[0][2] == RED and right[0][0] == WHITE and up[2][2] == GREEN) or
+        (front[0][2] == RED and right[0][0] == GREEN and up[2][2] == WHITE)
+        or (front[0][2] == GREEN and right[0][0] == RED and up[2][2] == WHITE) or
+        (front[0][2] == GREEN and right[0][0] == WHITE and up[2][2] == RED)) {
         up_rotation_90();
-        while (front[2][0] != WHITE || left[2][2] != GREEN || down[0][0] != RED) {
+        while (front[2][0] != WHITE or left[2][2] != GREEN or down[0][0] != RED) {
             Front_pif_paf();
         }
     }
 
-    if ((front[0][2] == BLUE && right[0][0] == YELLOW && up[2][2] == RED) || (front[0][2] == BLUE && right[0][0] == RED && up[2][2] == YELLOW)
-        || (front[0][2] == RED && right[0][0] == BLUE && up[2][2] == YELLOW) || (front[0][2] == RED && right[0][0] == YELLOW && up[2][2] == BLUE)
-        || (front[0][2] == YELLOW && right[0][0] == BLUE && up[2][2] == RED) || (front[0][2] == YELLOW && right[0][0] == RED && up[2][2] == BLUE)) {
+    if ((front[0][2] == BLUE and right[0][0] == YELLOW and up[2][2] == RED) or
+        (front[0][2] == BLUE and right[0][0] == RED and up[2][2] == YELLOW)
+        or (front[0][2] == RED and right[0][0] == BLUE and up[2][2] == YELLOW) or
+        (front[0][2] == RED and right[0][0] == YELLOW and up[2][2] == BLUE)
+        or (front[0][2] == YELLOW and right[0][0] == BLUE and up[2][2] == RED) or
+        (front[0][2] == YELLOW and right[0][0] == RED and up[2][2] == BLUE)) {
         up_rotation_against_90();
-        while (back[2][0] != YELLOW || right[2][2] != BLUE || down[2][2] != RED) {
+        while (back[2][0] != YELLOW or right[2][2] != BLUE or down[2][2] != RED) {
             Back_pif_paf();
         }
     }
 
-    if ((front[0][2] == RED && right[0][0] == GREEN && up[2][2] == YELLOW) || (front[0][2] == RED && right[0][0] == YELLOW && up[2][2] == GREEN)
-        || (front[0][2] == YELLOW && right[0][0] == RED && up[2][2] == GREEN) || (front[0][2] == YELLOW && right[0][0] == GREEN && up[2][2] == RED)
-        || (front[0][2] == GREEN && right[0][0] == YELLOW && up[2][2] == RED) || (front[0][2] == GREEN && right[0][0] == RED && up[2][2] == YELLOW)) {
+    if ((front[0][2] == RED and right[0][0] == GREEN and up[2][2] == YELLOW) or
+        (front[0][2] == RED and right[0][0] == YELLOW and up[2][2] == GREEN)
+        or (front[0][2] == YELLOW and right[0][0] == RED and up[2][2] == GREEN) or
+        (front[0][2] == YELLOW and right[0][0] == GREEN and up[2][2] == RED)
+        or (front[0][2] == GREEN and right[0][0] == YELLOW and up[2][2] == RED) or
+        (front[0][2] == GREEN and right[0][0] == RED and up[2][2] == YELLOW)) {
         up_rotation_90();
         up_rotation_90();
-        while (back[2][2] != YELLOW || left[2][0] != GREEN || down[2][0] != RED) {
+        while (back[2][2] != YELLOW or left[2][0] != GREEN or down[2][0] != RED) {
             Left_pif_paf();
         }
     }
 }
 
-void Cube::third_up_corner(){
+void Cube::third_up_corner() {
     // третий угол сверху
 
-    if ((back[0][2] == RED && left[0][0] == BLUE && up[0][0] == WHITE) || (back[0][2] == RED && left[0][0] == WHITE && up[0][0] == BLUE)
-        || (back[0][2] == WHITE && left[0][0] == RED && up[0][0] == BLUE) || (back[0][2] == WHITE && left[0][0] == BLUE && up[0][0] == RED)
-        || (back[0][2] == BLUE && left[0][0] == RED && up[0][0] == WHITE) || (back[0][2] == BLUE && left[0][0] == WHITE && up[0][0] == RED)) {
-        for(int i = 0; i < 2; i++)  up_rotation_against_90();
-        while (front[2][2] != WHITE || right[2][0] != BLUE || down[0][2] != RED) {
+    if ((back[0][2] == RED and left[0][0] == BLUE and up[0][0] == WHITE) or
+        (back[0][2] == RED and left[0][0] == WHITE and up[0][0] == BLUE)
+        or (back[0][2] == WHITE and left[0][0] == RED and up[0][0] == BLUE) or
+        (back[0][2] == WHITE and left[0][0] == BLUE and up[0][0] == RED)
+        or (back[0][2] == BLUE and left[0][0] == RED and up[0][0] == WHITE) or
+        (back[0][2] == BLUE and left[0][0] == WHITE and up[0][0] == RED)) {
+        for (int i = 0; i < 2; i++) up_rotation_against_90();
+        while (front[2][2] != WHITE or right[2][0] != BLUE or down[0][2] != RED) {
             Right_pif_paf();
         }
     }
 
-    if ((back[0][2] == WHITE && left[0][0] == GREEN && up[0][0] == RED) || (back[0][2] == WHITE && left[0][0] == RED && up[0][0] == GREEN)
-        || (back[0][2] == RED && left[0][0] == WHITE && up[0][0] == GREEN) || (back[0][2] == RED && left[0][0] == GREEN && up[0][0] == WHITE)
-        || (back[0][2] == GREEN && left[0][0] == RED && up[0][0] == WHITE) || (back[0][2] == GREEN && left[0][0] == WHITE && up[0][0] == RED)) {
+    if ((back[0][2] == WHITE and left[0][0] == GREEN and up[0][0] == RED) or
+        (back[0][2] == WHITE and left[0][0] == RED and up[0][0] == GREEN)
+        or (back[0][2] == RED and left[0][0] == WHITE and up[0][0] == GREEN) or
+        (back[0][2] == RED and left[0][0] == GREEN and up[0][0] == WHITE)
+        or (back[0][2] == GREEN and left[0][0] == RED and up[0][0] == WHITE) or
+        (back[0][2] == GREEN and left[0][0] == WHITE and up[0][0] == RED)) {
         up_rotation_against_90();
-        while (front[2][0] != WHITE || left[2][2] != GREEN || down[0][0] != RED) {
+        while (front[2][0] != WHITE or left[2][2] != GREEN or down[0][0] != RED) {
             Front_pif_paf();
         }
     }
 
-    if ((back[0][2] == BLUE && left[0][0] == YELLOW && up[0][0] == RED) || (back[0][2] == BLUE && left[0][0] == RED && up[0][0] == YELLOW)
-        || (back[0][2] == RED && left[0][0] == BLUE && up[0][0] == YELLOW) || (back[0][2] == RED && left[0][0] == YELLOW && up[0][0] == BLUE)
-        || (back[0][2] == YELLOW && left[0][0] == BLUE && up[0][0] == RED) || (back[0][2] == YELLOW && left[0][0] == RED && up[0][0] == BLUE)) {
+    if ((back[0][2] == BLUE and left[0][0] == YELLOW and up[0][0] == RED) or
+        (back[0][2] == BLUE and left[0][0] == RED and up[0][0] == YELLOW)
+        or (back[0][2] == RED and left[0][0] == BLUE and up[0][0] == YELLOW) or
+        (back[0][2] == RED and left[0][0] == YELLOW and up[0][0] == BLUE)
+        or (back[0][2] == YELLOW and left[0][0] == BLUE and up[0][0] == RED) or
+        (back[0][2] == YELLOW and left[0][0] == RED and up[0][0] == BLUE)) {
         up_rotation_90();
-        while (back[2][0] != YELLOW || right[2][2] != BLUE || down[2][2] != RED) {
+        while (back[2][0] != YELLOW or right[2][2] != BLUE or down[2][2] != RED) {
             Back_pif_paf();
         }
     }
 
-    if ((back[0][2] == RED && left[0][0] == GREEN && up[0][0] == YELLOW) || (back[0][2] == RED && left[0][0] == YELLOW && up[0][0] == GREEN)
-        || (back[0][2] == YELLOW && left[0][0] == RED && up[0][0] == GREEN) || (back[0][2] == YELLOW && left[0][0] == GREEN && up[0][0] == RED)
-        || (back[0][2] == GREEN && left[0][0] == YELLOW && up[0][0] == RED) || (back[0][2] == GREEN && left[0][0] == RED && up[0][0] == YELLOW)) {
-        while (back[2][2] != YELLOW || left[2][0] != GREEN || down[2][0] != RED) {
+    if ((back[0][2] == RED and left[0][0] == GREEN and up[0][0] == YELLOW) or
+        (back[0][2] == RED and left[0][0] == YELLOW and up[0][0] == GREEN)
+        or (back[0][2] == YELLOW and left[0][0] == RED and up[0][0] == GREEN) or
+        (back[0][2] == YELLOW and left[0][0] == GREEN and up[0][0] == RED)
+        or (back[0][2] == GREEN and left[0][0] == YELLOW and up[0][0] == RED) or
+        (back[0][2] == GREEN and left[0][0] == RED and up[0][0] == YELLOW)) {
+        while (back[2][2] != YELLOW or left[2][0] != GREEN or down[2][0] != RED) {
             Left_pif_paf();
         }
     }
 }
 
-void Cube::fourth_up_corner(){
+void Cube::fourth_up_corner() {
 
     // четвертый угол сверху
-    if ((left[0][2] == RED && front[0][0] == BLUE && up[2][0] == WHITE) || (left[0][2] == RED && front[0][0] == WHITE && up[2][0] == BLUE)
-        || (left[0][2] == WHITE && front[0][0] == RED && up[2][0] == BLUE) || (left[0][2] == WHITE && front[0][0] == BLUE && up[2][0] == RED)
-        || (left[0][2] == BLUE && front[0][0] == RED && up[2][0] == WHITE) || (left[0][2] == BLUE && front[0][0] == WHITE && up[2][0] == RED)) {
+    if ((left[0][2] == RED and front[0][0] == BLUE and up[2][0] == WHITE) or
+        (left[0][2] == RED and front[0][0] == WHITE and up[2][0] == BLUE)
+        or (left[0][2] == WHITE and front[0][0] == RED and up[2][0] == BLUE) or
+        (left[0][2] == WHITE and front[0][0] == BLUE and up[2][0] == RED)
+        or (left[0][2] == BLUE and front[0][0] == RED and up[2][0] == WHITE) or
+        (left[0][2] == BLUE and front[0][0] == WHITE and up[2][0] == RED)) {
         up_rotation_against_90();
-        while (front[2][2] != WHITE || right[2][0] != BLUE || down[0][2] != RED) {
+        while (front[2][2] != WHITE or right[2][0] != BLUE or down[0][2] != RED) {
             Right_pif_paf();
         }
     }
 
-    if ((left[0][2] == WHITE && front[0][0] == GREEN && up[2][0] == RED) || (left[0][2] == WHITE && front[0][0] == RED && up[2][0] == GREEN)
-        || (left[0][2] == RED && front[0][0] == WHITE && up[2][0] == GREEN) || (left[0][2] == RED && front[0][0] == GREEN && up[2][0] == WHITE)
-        || (left[0][2] == GREEN && front[0][0] == RED && up[2][0] == WHITE) || (left[0][2] == GREEN && front[0][0] == WHITE && up[2][0] == RED)) {
-        while (front[2][0] != WHITE || left[2][2] != GREEN || down[0][0] != RED) {
+    if ((left[0][2] == WHITE and front[0][0] == GREEN and up[2][0] == RED) or
+        (left[0][2] == WHITE and front[0][0] == RED and up[2][0] == GREEN)
+        or (left[0][2] == RED and front[0][0] == WHITE and up[2][0] == GREEN) or
+        (left[0][2] == RED and front[0][0] == GREEN and up[2][0] == WHITE)
+        or (left[0][2] == GREEN and front[0][0] == RED and up[2][0] == WHITE) or
+        (left[0][2] == GREEN and front[0][0] == WHITE and up[2][0] == RED)) {
+        while (front[2][0] != WHITE or left[2][2] != GREEN or down[0][0] != RED) {
             Front_pif_paf();
         }
     }
 
-    if ((left[0][2] == BLUE && front[0][0] == YELLOW && up[2][0] == RED) or (left[0][2] == BLUE && front[0][0] == RED && up[2][0] == YELLOW)
-                                                                            or (left[0][2] == RED && front[0][0] == BLUE && up[2][0] == YELLOW) or (left[0][2] == RED && front[0][0] == YELLOW && up[2][0] == BLUE)
-                                                                            or (left[0][2] == YELLOW && front[0][0] == BLUE && up[2][0] == RED) or (left[0][2] == YELLOW && front[0][0] == RED && up[2][0] == BLUE)) {
-        for(int i = 0; i < 2; i++) up_rotation_90();
-        while (back[2][0] != YELLOW || right[2][2] != BLUE || down[2][2] != RED) {
+    if ((left[0][2] == BLUE and front[0][0] == YELLOW and up[2][0] == RED) or
+        (left[0][2] == BLUE and front[0][0] == RED and up[2][0] == YELLOW)
+        or (left[0][2] == RED and front[0][0] == BLUE and up[2][0] == YELLOW) or
+        (left[0][2] == RED and front[0][0] == YELLOW and up[2][0] == BLUE)
+        or (left[0][2] == YELLOW and front[0][0] == BLUE and up[2][0] == RED) or
+        (left[0][2] == YELLOW and front[0][0] == RED and up[2][0] == BLUE)) {
+        for (int i = 0; i < 2; i++) up_rotation_90();
+        while (back[2][0] != YELLOW or right[2][2] != BLUE or down[2][2] != RED) {
             Back_pif_paf();
         }
     }
 
-    if ((left[0][2] == RED && front[0][0] == GREEN && up[2][0] == YELLOW) || (left[0][2] == RED && front[0][0] == YELLOW && up[2][0] == GREEN)
-        || (left[0][2] == YELLOW && front[0][0] == RED && up[2][0] == GREEN) || (left[0][2] == YELLOW && front[0][0] == GREEN && up[2][0] == RED)
-        || (left[0][2] == GREEN && front[0][0] == YELLOW && up[2][0] == RED) || (left[0][2] == GREEN && front[0][0] == RED && up[2][0] == YELLOW)) {
+    if ((left[0][2] == RED and front[0][0] == GREEN and up[2][0] == YELLOW) or
+        (left[0][2] == RED and front[0][0] == YELLOW and up[2][0] == GREEN)
+        or (left[0][2] == YELLOW and front[0][0] == RED and up[2][0] == GREEN) or
+        (left[0][2] == YELLOW and front[0][0] == GREEN and up[2][0] == RED)
+        or (left[0][2] == GREEN and front[0][0] == YELLOW and up[2][0] == RED) or
+        (left[0][2] == GREEN and front[0][0] == RED and up[2][0] == YELLOW)) {
         up_rotation_90();
-        while (back[2][2] != YELLOW || left[2][0] != GREEN || down[2][0] != RED) {
+        while (back[2][2] != YELLOW or left[2][0] != GREEN or down[2][0] != RED) {
             Left_pif_paf();
         }
     }
 }
 
 void Cube::first_layer() {
-    while ((((front[2][0] != WHITE or right[2][0] != BLUE or back[2][0] !=  YELLOW or left[2][0] != GREEN)
-             or (front[2][1] != WHITE or right[2][1] != BLUE or back[2][1] !=  YELLOW or left[2][1] != GREEN)
-             or (front[2][2] != WHITE or right[2][2] != BLUE or back[2][2] !=  YELLOW or left[2][2] != GREEN))
+    while ((((front[2][0] != WHITE or right[2][0] != BLUE or back[2][0] != YELLOW or left[2][0] != GREEN)
+             or (front[2][1] != WHITE or right[2][1] != BLUE or back[2][1] != YELLOW or left[2][1] != GREEN)
+             or (front[2][2] != WHITE or right[2][2] != BLUE or back[2][2] != YELLOW or left[2][2] != GREEN))
             and (down[0][0] != RED or down[0][2] != RED or down[2][0] != RED or down[2][2] != RED))) {
 
         this->up_second_corner();
@@ -485,15 +509,15 @@ void Cube::first_layer() {
 void Cube::second() {
     int p, counter;
 
-    while ((front[1][0] != WHITE || front[1][2] != WHITE || right[1][0] != BLUE || right[1][2] != BLUE
-    || back[1][0] != YELLOW || back[1][2] != YELLOW || left[1][0] != GREEN || left[1][2] != GREEN)) {
+    while ((front[1][0] != WHITE or front[1][2] != WHITE or right[1][0] != BLUE or right[1][2] != BLUE
+            or back[1][0] != YELLOW or back[1][2] != YELLOW or left[1][0] != GREEN or left[1][2] != GREEN)) {
         counter = 0;
         p = -1;
 
         while (counter > p) {
             p = counter;
 
-            if (front[0][1] == WHITE || right[0][1] == WHITE || back[0][1] == WHITE || left[0][1] == WHITE) {
+            if (front[0][1] == WHITE or right[0][1] == WHITE or back[0][1] == WHITE or left[0][1] == WHITE) {
                 if (front[0][1] != WHITE) {
                     while (front[0][1] != WHITE) {
                         up_rotation_90();
@@ -508,8 +532,7 @@ void Cube::second() {
                     up_rotation_against_90();
                     front_rotation_90();
                     up_rotation_90();
-                }
-                else if (up[2][1] == GREEN) {
+                } else if (up[2][1] == GREEN) {
                     counter++;
                     up_rotation_against_90();
                     left_rotation_against_90();
@@ -520,7 +543,7 @@ void Cube::second() {
                 }
             }
 
-            if (front[0][1] == BLUE || right[0][1] == BLUE || back[0][1] == BLUE || left[0][1] == BLUE) {
+            if (front[0][1] == BLUE or right[0][1] == BLUE or back[0][1] == BLUE or left[0][1] == BLUE) {
                 if (right[0][1] != BLUE) {
                     while (right[0][1] != BLUE) {
                         up_rotation_90();
@@ -535,8 +558,7 @@ void Cube::second() {
                     up_rotation_against_90();
                     right_rotation_90();
                     up_rotation_90();
-                }
-                else if (up[1][2] == WHITE) {
+                } else if (up[1][2] == WHITE) {
                     counter++;
                     up_rotation_against_90();
                     front_rotation_against_90();
@@ -547,7 +569,7 @@ void Cube::second() {
                 }
             }
 
-            if (front[0][1] == YELLOW || right[0][1] == YELLOW || back[0][1] == YELLOW || left[0][1] == YELLOW) {
+            if (front[0][1] == YELLOW or right[0][1] == YELLOW or back[0][1] == YELLOW or left[0][1] == YELLOW) {
                 if (back[0][1] != YELLOW) {
                     while (back[0][1] != YELLOW) {
                         up_rotation_90();
@@ -562,8 +584,7 @@ void Cube::second() {
                     up_rotation_against_90();
                     back_rotation_90();
                     up_rotation_90();
-                }
-                else if (up[0][1] == BLUE) {
+                } else if (up[0][1] == BLUE) {
                     counter++;
                     up_rotation_against_90();
                     right_rotation_against_90();
@@ -574,7 +595,7 @@ void Cube::second() {
                 }
             }
 
-            if (front[0][1] == GREEN || right[0][1] == GREEN || back[0][1] == GREEN || left[0][1] == GREEN) {
+            if (front[0][1] == GREEN or right[0][1] == GREEN or back[0][1] == GREEN or left[0][1] == GREEN) {
                 if (left[0][1] != GREEN) {
                     while (left[0][1] != GREEN) {
                         up_rotation_90();
@@ -589,8 +610,7 @@ void Cube::second() {
                     up_rotation_against_90();
                     left_rotation_90();
                     up_rotation_90();
-                }
-                else if (up[1][0] == YELLOW) {
+                } else if (up[1][0] == YELLOW) {
                     counter++;
                     up_rotation_against_90();
                     back_rotation_against_90();
@@ -645,7 +665,8 @@ bool Cube::assembly_check() {
 
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
-            if (front[i][j] != WHITE || right[i][j] != BLUE || back[i][j] != YELLOW || left[i][j] != GREEN || up[i][j] != ORANGE || down[i][j] != RED) {
+            if (front[i][j] != WHITE or right[i][j] != BLUE or back[i][j] != YELLOW or left[i][j] != GREEN or
+                up[i][j] != ORANGE or down[i][j] != RED) {
                 ch = false;
             }
         }
@@ -653,14 +674,15 @@ bool Cube::assembly_check() {
 
     return ch;
 }
+
 bool Cube::check_orange_right_cross() {
     bool ch = true;
 
-    if (up[0][1] != ORANGE || up[1][2] != ORANGE || up[2][1] != ORANGE || up[1][0] != ORANGE) {
+    if (up[0][1] != ORANGE or up[1][2] != ORANGE or up[2][1] != ORANGE or up[1][0] != ORANGE) {
         ch = false;
     }
 
-    if (front[0][1] != WHITE || right[0][1] != BLUE || back[0][1] != YELLOW || left[0][1] != GREEN) {
+    if (front[0][1] != WHITE or right[0][1] != BLUE or back[0][1] != YELLOW or left[0][1] != GREEN) {
         ch = false;
     }
 
@@ -670,73 +692,68 @@ bool Cube::check_orange_right_cross() {
 bool Cube::orange_cross_check() {
     bool ch = true;
 
-    if (up[0][1] != ORANGE || up[1][2] != ORANGE || up[2][1] != ORANGE || up[1][0] != ORANGE) {
+    if (up[0][1] != ORANGE or up[1][2] != ORANGE or up[2][1] != ORANGE or up[1][0] != ORANGE) {
         ch = false;
     }
 
     return ch;
 }
 
+
 bool Cube::check_upper_edges() {
-    return ((up[2][2] == ORANGE && front[0][2] == WHITE && right[0][0] == BLUE) ||
-            (up[2][2] == ORANGE && front[0][2] == BLUE && right[0][0] == WHITE) ||
-            (up[2][2] == WHITE && front[0][2] == ORANGE && right[0][0] == BLUE) ||
-            (up[2][2] == WHITE && front[0][2] == BLUE && right[0][0] == ORANGE) ||
-            (up[2][2] == BLUE && front[0][2] == WHITE && right[0][0] == ORANGE) ||
-            (up[2][2] == BLUE && front[0][2] == ORANGE && right[0][0] == WHITE)) &&
-           ((front[0][0] == WHITE && left[0][2] == GREEN && up[2][0] == ORANGE) ||
-            (front[0][0] == WHITE && left[0][2] == ORANGE && up[2][0] == GREEN) ||
-            (front[0][0] == GREEN && left[0][2] == ORANGE && up[2][0] == WHITE) ||
-            (front[0][0] == GREEN && left[0][2] == WHITE && up[2][0] == ORANGE) ||
-            (front[0][0] == ORANGE && left[0][2] == GREEN && up[2][0] == WHITE) ||
-            (front[0][0] == ORANGE && left[0][2] == WHITE && up[2][0] == GREEN)) &&
-           ((up[0][2] == ORANGE && right[0][2] == BLUE && back[0][0] == YELLOW) ||
-            (up[0][2] == ORANGE && right[0][2] == YELLOW && back[0][0] == BLUE) ||
-            (up[0][2] == BLUE && right[0][2] == ORANGE && back[0][0] == YELLOW) ||
-            (up[0][2] == BLUE && right[0][2] == YELLOW && back[0][0] == ORANGE) ||
-            (up[0][2] == YELLOW && right[0][2] == BLUE && back[0][0] == ORANGE) ||
-            (up[0][2] == YELLOW && right[0][2] == ORANGE && back[0][0] == BLUE)) &&
-           ((up[0][0] == ORANGE && back[0][2] == YELLOW && left[0][0] == GREEN) ||
-            (up[0][0] == ORANGE && back[0][2] == GREEN && left[0][0] == YELLOW) ||
-            (up[0][0] == GREEN && back[0][2] == YELLOW && left[0][0] == ORANGE) ||
-            (up[0][0] == GREEN && back[0][2] == ORANGE && left[0][0] == YELLOW) ||
-            (up[0][0] == YELLOW && back[0][2] == ORANGE && left[0][0] == GREEN) ||
-            (up[0][0] == YELLOW && back[0][2] == GREEN && left[0][0] == ORANGE));
+    return ((up[2][2] == ORANGE and front[0][2] == WHITE and right[0][0] == BLUE) or
+            (up[2][2] == ORANGE and front[0][2] == BLUE and right[0][0] == WHITE) or
+            (up[2][2] == WHITE and front[0][2] == ORANGE and right[0][0] == BLUE) or
+            (up[2][2] == WHITE and front[0][2] == BLUE and right[0][0] == ORANGE) or
+            (up[2][2] == BLUE and front[0][2] == WHITE and right[0][0] == ORANGE) or
+            (up[2][2] == BLUE and front[0][2] == ORANGE and right[0][0] == WHITE)) and
+           ((front[0][0] == WHITE and left[0][2] == GREEN and up[2][0] == ORANGE) or
+            (front[0][0] == WHITE and left[0][2] == ORANGE and up[2][0] == GREEN) or
+            (front[0][0] == GREEN and left[0][2] == ORANGE and up[2][0] == WHITE) or
+            (front[0][0] == GREEN and left[0][2] == WHITE and up[2][0] == ORANGE) or
+            (front[0][0] == ORANGE and left[0][2] == GREEN and up[2][0] == WHITE) or
+            (front[0][0] == ORANGE and left[0][2] == WHITE and up[2][0] == GREEN)) and
+           ((up[0][2] == ORANGE and right[0][2] == BLUE and back[0][0] == YELLOW) or
+            (up[0][2] == ORANGE and right[0][2] == YELLOW and back[0][0] == BLUE) or
+            (up[0][2] == BLUE and right[0][2] == ORANGE and back[0][0] == YELLOW) or
+            (up[0][2] == BLUE and right[0][2] == YELLOW and back[0][0] == ORANGE) or
+            (up[0][2] == YELLOW and right[0][2] == BLUE and back[0][0] == ORANGE) or
+            (up[0][2] == YELLOW and right[0][2] == ORANGE and back[0][0] == BLUE)) and
+           ((up[0][0] == ORANGE and back[0][2] == YELLOW and left[0][0] == GREEN) or
+            (up[0][0] == ORANGE and back[0][2] == GREEN and left[0][0] == YELLOW) or
+            (up[0][0] == GREEN and back[0][2] == YELLOW and left[0][0] == ORANGE) or
+            (up[0][0] == GREEN and back[0][2] == ORANGE and left[0][0] == YELLOW) or
+            (up[0][0] == YELLOW and back[0][2] == ORANGE and left[0][0] == GREEN) or
+            (up[0][0] == YELLOW and back[0][2] == GREEN and left[0][0] == ORANGE));
 }
 
 void Cube::third() {
     while (!orange_cross_check()) {
-        if (up[0][1] == ORANGE && up[1][2] == ORANGE && up[2][1] != ORANGE && up[1][0] != ORANGE) {
+        if (up[0][1] == ORANGE and up[1][2] == ORANGE and up[2][1] != ORANGE and up[1][0] != ORANGE) {
             left_rotation_90();
             Front_pif_paf();
             left_rotation_against_90();
-        }
-        else if (up[0][1] == ORANGE && up[1][2] != ORANGE && up[2][1] == ORANGE && up[1][0] != ORANGE) {
+        } else if (up[0][1] == ORANGE and up[1][2] != ORANGE and up[2][1] == ORANGE and up[1][0] != ORANGE) {
             left_rotation_90();
             Front_pif_paf();
             left_rotation_against_90();
-        }
-        else if (up[0][1] != ORANGE && up[1][2] == ORANGE && up[2][1] == ORANGE && up[1][0] != ORANGE) {
+        } else if (up[0][1] != ORANGE and up[1][2] == ORANGE and up[2][1] == ORANGE and up[1][0] != ORANGE) {
             back_rotation_90();
             Left_pif_paf();
             back_rotation_against_90();
-        }
-        else if (up[0][1] == ORANGE && up[1][2] != ORANGE && up[2][1] != ORANGE && up[1][0] == ORANGE) {
+        } else if (up[0][1] == ORANGE and up[1][2] != ORANGE and up[2][1] != ORANGE and up[1][0] == ORANGE) {
             front_rotation_90();
             Right_pif_paf();
             front_rotation_against_90();
-        }
-        else if (up[0][1] != ORANGE && up[1][2] == ORANGE && up[2][1] != ORANGE && up[1][0] == ORANGE) {
+        } else if (up[0][1] != ORANGE and up[1][2] == ORANGE and up[2][1] != ORANGE and up[1][0] == ORANGE) {
             front_rotation_90();
             Right_pif_paf();
             front_rotation_against_90();
-        }
-        else if (up[0][1] != ORANGE && up[1][2] != ORANGE && up[2][1] == ORANGE && up[1][0] == ORANGE) {
+        } else if (up[0][1] != ORANGE and up[1][2] != ORANGE and up[2][1] == ORANGE and up[1][0] == ORANGE) {
             right_rotation_90();
             Back_pif_paf();
             right_rotation_against_90();
-        }
-        else if (up[0][1] != ORANGE && up[1][2] != ORANGE && up[2][1] != ORANGE && up[1][0] != ORANGE) {
+        } else if (up[0][1] != ORANGE and up[1][2] != ORANGE and up[2][1] != ORANGE and up[1][0] != ORANGE) {
             front_rotation_90();
             Right_pif_paf();
             front_rotation_against_90();
@@ -763,11 +780,10 @@ void Cube::third() {
     }
 
 
-
     if (!ch) {
         while (!check_orange_right_cross()) {
             up_rotation_90();
-            if (right[0][1] == BLUE && back[0][1] == YELLOW) {
+            if (right[0][1] == BLUE and back[0][1] == YELLOW) {
                 right_rotation_90();
                 up_rotation_90();
                 right_rotation_against_90();
@@ -777,8 +793,7 @@ void Cube::third() {
                 up_rotation_90();
                 right_rotation_against_90();
                 up_rotation_90();
-            }
-            else if (right[0][1] == BLUE && front[0][1] == WHITE) {
+            } else if (right[0][1] == BLUE and front[0][1] == WHITE) {
                 front_rotation_90();
                 up_rotation_90();
                 front_rotation_against_90();
@@ -788,8 +803,7 @@ void Cube::third() {
                 up_rotation_90();
                 front_rotation_against_90();
                 up_rotation_90();
-            }
-            else if (front[0][1] == WHITE && left[0][1] == GREEN) {
+            } else if (front[0][1] == WHITE and left[0][1] == GREEN) {
                 left_rotation_90();
                 up_rotation_90();
                 left_rotation_against_90();
@@ -799,8 +813,7 @@ void Cube::third() {
                 up_rotation_90();
                 left_rotation_against_90();
                 up_rotation_90();
-            }
-            else if (left[0][1] == GREEN && back[0][1] == YELLOW) {
+            } else if (left[0][1] == GREEN and back[0][1] == YELLOW) {
                 back_rotation_90();
                 up_rotation_90();
                 back_rotation_against_90();
@@ -810,8 +823,7 @@ void Cube::third() {
                 up_rotation_90();
                 back_rotation_against_90();
                 up_rotation_90();
-            }
-            else if (right[0][1] == BLUE && left[0][1] == GREEN) {
+            } else if (right[0][1] == BLUE and left[0][1] == GREEN) {
                 back_rotation_90();
                 up_rotation_90();
                 back_rotation_against_90();
@@ -820,8 +832,7 @@ void Cube::third() {
                 up_rotation_90();
                 up_rotation_90();
                 back_rotation_against_90();
-            }
-            else if (front[0][1] == WHITE && back[0][1] == YELLOW) {
+            } else if (front[0][1] == WHITE and back[0][1] == YELLOW) {
                 right_rotation_90();
                 up_rotation_90();
                 right_rotation_against_90();
@@ -838,9 +849,12 @@ void Cube::third() {
     show();
 
     while (!check_upper_edges()) {
-        if ((up[2][2] == ORANGE && front[0][2] == WHITE && right[0][0] == BLUE) || (up[2][2] == ORANGE && front[0][2] == BLUE && right[0][0] == WHITE) ||
-            (up[2][2] == WHITE && front[0][2] == ORANGE && right[0][0] == BLUE) || (up[2][2] == WHITE && front[0][2] == BLUE && right[0][0] == ORANGE) ||
-            (up[2][2] == BLUE && front[0][2] == WHITE && right[0][0] == ORANGE) || (up[2][2] == BLUE && front[0][2] == ORANGE && right[0][0] == WHITE)) {
+        if ((up[2][2] == ORANGE and front[0][2] == WHITE and right[0][0] == BLUE) or
+            (up[2][2] == ORANGE and front[0][2] == BLUE and right[0][0] == WHITE) or
+            (up[2][2] == WHITE and front[0][2] == ORANGE and right[0][0] == BLUE) or
+            (up[2][2] == WHITE and front[0][2] == BLUE and right[0][0] == ORANGE) or
+            (up[2][2] == BLUE and front[0][2] == WHITE and right[0][0] == ORANGE) or
+            (up[2][2] == BLUE and front[0][2] == ORANGE and right[0][0] == WHITE)) {
             up_rotation_90();
             right_rotation_90();
             up_rotation_against_90();
@@ -849,10 +863,12 @@ void Cube::third() {
             right_rotation_against_90();
             up_rotation_against_90();
             left_rotation_90();
-        }
-        else if ((front[0][0] == WHITE && left[0][2] == GREEN && up[2][0] == ORANGE) || (front[0][0] == WHITE && left[0][2] == ORANGE && up[2][0] == GREEN) ||
-                 (front[0][0] == GREEN && left[0][2] == ORANGE && up[2][0] == WHITE) || (front[0][0] == GREEN && left[0][2] == WHITE && up[2][0] == ORANGE) ||
-                 (front[0][0] == ORANGE && left[0][2] == GREEN && up[2][0] == WHITE) || (front[0][0] == ORANGE && left[0][2] == WHITE && up[2][0] == GREEN)) {
+        } else if ((front[0][0] == WHITE and left[0][2] == GREEN and up[2][0] == ORANGE) or
+                   (front[0][0] == WHITE and left[0][2] == ORANGE and up[2][0] == GREEN) or
+                   (front[0][0] == GREEN and left[0][2] == ORANGE and up[2][0] == WHITE) or
+                   (front[0][0] == GREEN and left[0][2] == WHITE and up[2][0] == ORANGE) or
+                   (front[0][0] == ORANGE and left[0][2] == GREEN and up[2][0] == WHITE) or
+                   (front[0][0] == ORANGE and left[0][2] == WHITE and up[2][0] == GREEN)) {
             up_rotation_90();
             front_rotation_90();
             up_rotation_against_90();
@@ -861,10 +877,12 @@ void Cube::third() {
             front_rotation_against_90();
             up_rotation_against_90();
             back_rotation_90();
-        }
-        else if ((up[0][2] == ORANGE && right[0][2] == BLUE && back[0][0] == YELLOW) || (up[0][2] == ORANGE && right[0][2] == YELLOW && back[0][0] == BLUE) ||
-                 (up[0][2] == BLUE && right[0][2] == ORANGE && back[0][0] == YELLOW) || (up[0][2] == BLUE && right[0][2] == YELLOW && back[0][0] == ORANGE) ||
-                 (up[0][2] == YELLOW && right[0][2] == BLUE && back[0][0] == ORANGE) || (up[0][2] == YELLOW && right[0][2] == ORANGE && back[0][0] == BLUE)) {
+        } else if ((up[0][2] == ORANGE and right[0][2] == BLUE and back[0][0] == YELLOW) or
+                   (up[0][2] == ORANGE and right[0][2] == YELLOW and back[0][0] == BLUE) or
+                   (up[0][2] == BLUE and right[0][2] == ORANGE and back[0][0] == YELLOW) or
+                   (up[0][2] == BLUE and right[0][2] == YELLOW and back[0][0] == ORANGE) or
+                   (up[0][2] == YELLOW and right[0][2] == BLUE and back[0][0] == ORANGE) or
+                   (up[0][2] == YELLOW and right[0][2] == ORANGE and back[0][0] == BLUE)) {
             up_rotation_90();
             back_rotation_90();
             up_rotation_against_90();
@@ -873,10 +891,12 @@ void Cube::third() {
             back_rotation_against_90();
             up_rotation_against_90();
             front_rotation_90();
-        }
-        else if ((up[0][0] == ORANGE && back[0][2] == YELLOW && left[0][0] == GREEN) || (up[0][0] == ORANGE && back[0][2] == GREEN && left[0][0] == YELLOW) ||
-                 (up[0][0] == GREEN && back[0][2] == YELLOW && left[0][0] == ORANGE) || (up[0][0] == GREEN && back[0][2] == ORANGE && left[0][0] == YELLOW) ||
-                 (up[0][0] == YELLOW && back[0][2] == ORANGE && left[0][0] == GREEN) || (up[0][0] == YELLOW && back[0][2] == GREEN && left[0][0] == ORANGE)) {
+        } else if ((up[0][0] == ORANGE and back[0][2] == YELLOW and left[0][0] == GREEN) or
+                   (up[0][0] == ORANGE and back[0][2] == GREEN and left[0][0] == YELLOW) or
+                   (up[0][0] == GREEN and back[0][2] == YELLOW and left[0][0] == ORANGE) or
+                   (up[0][0] == GREEN and back[0][2] == ORANGE and left[0][0] == YELLOW) or
+                   (up[0][0] == YELLOW and back[0][2] == ORANGE and left[0][0] == GREEN) or
+                   (up[0][0] == YELLOW and back[0][2] == GREEN and left[0][0] == ORANGE)) {
             up_rotation_90();
             left_rotation_90();
             up_rotation_against_90();
@@ -885,8 +905,7 @@ void Cube::third() {
             left_rotation_against_90();
             up_rotation_against_90();
             right_rotation_90();
-        }
-        else {
+        } else {
             up_rotation_90();
             right_rotation_90();
             up_rotation_against_90();
@@ -915,18 +934,44 @@ void Cube::third() {
 
 }
 
+void Cube::main_solver() {
+    if (!check()) {
+        cout << "try to to reenter values";
+        return;
+    }
+    cout << "Process:" << '\n';
+    flower();
+    cornerCheck();
+    right_cross();
+    first_layer();
+    second();
+    third();
+}
+
 bool Cube::cornerCheck() {
-    return ((up[2][2] == 4 && front[0][2] == 0 && right[0][0] == 3) || (up[2][2] == 4 && front[0][2] == 3 && right[0][0] == 0) ||
-            (up[2][2] == 0 && front[0][2] == 4 && right[0][0] == 3) || (up[2][2] == 0 && front[0][2] == 3 && right[0][0] == 4) ||
-            (up[2][2] == 3 && front[0][2] == 0 && right[0][0] == 4) || (up[2][2] == 3 && front[0][2] == 4 && right[0][0] == 0)) &&
-           ((front[0][0] == 0 && left[0][2] == 2 && up[2][0] == 4) || (front[0][0] == 0 && left[0][2] == 4 && up[2][0] == 2) ||
-            (front[0][0] == 2 && left[0][2] == 4 && up[2][0] == 0) || (front[0][0] == 2 && left[0][2] == 0 && up[2][0] == 4) ||
-            (front[0][0] == 4 && left[0][2] == 2 && up[2][0] == 0) || (front[0][0] == 4 && left[0][2] == 0 && up[2][0] == 2)) &&
-           ((up[0][2] == 4 && right[0][2] == 3 && back[2][2] == 1) || (up[0][2] == 4 && right[0][2] == 1 && back[2][2] == 3) ||
-            (up[0][2] == 3 && right[0][2] == 4 && back[2][2] == 1) || (up[0][2] == 3 && right[0][2] == 1 && back[2][2] == 4) ||
-            (up[0][2] == 1 && right[0][2] == 3 && back[2][2] == 4) || (up[0][2] == 1 && right[0][2] == 4 && back[2][2] == 3)) &&
-           ((up[0][0] == 4 && back[2][0] == 1 && left[0][0] == 2) || (up[0][0] == 4 && back[2][0] == 2 && left[0][0] == 1) ||
-            (up[0][0] == 2 && back[2][0] == 1 && left[0][0] == 4) || (up[0][0] == 2 && back[2][0] == 4 && left[0][0] == 1) ||
-            (up[0][0] == 1 && back[2][0] == 4 && left[0][0] == 2) || (up[0][0] == 1 && back[2][0] == 2 && left[0][0] == 4));
+    return ((up[2][2] == 4 and front[0][2] == 0 and right[0][0] == 3) or
+            (up[2][2] == 4 and front[0][2] == 3 and right[0][0] == 0) or
+            (up[2][2] == 0 and front[0][2] == 4 and right[0][0] == 3) or
+            (up[2][2] == 0 and front[0][2] == 3 and right[0][0] == 4) or
+            (up[2][2] == 3 and front[0][2] == 0 and right[0][0] == 4) or
+            (up[2][2] == 3 and front[0][2] == 4 and right[0][0] == 0)) and
+           ((front[0][0] == 0 and left[0][2] == 2 and up[2][0] == 4) or
+            (front[0][0] == 0 and left[0][2] == 4 and up[2][0] == 2) or
+            (front[0][0] == 2 and left[0][2] == 4 and up[2][0] == 0) or
+            (front[0][0] == 2 and left[0][2] == 0 and up[2][0] == 4) or
+            (front[0][0] == 4 and left[0][2] == 2 and up[2][0] == 0) or
+            (front[0][0] == 4 and left[0][2] == 0 and up[2][0] == 2)) and
+           ((up[0][2] == 4 and right[0][2] == 3 and back[2][2] == 1) or
+            (up[0][2] == 4 and right[0][2] == 1 and back[2][2] == 3) or
+            (up[0][2] == 3 and right[0][2] == 4 and back[2][2] == 1) or
+            (up[0][2] == 3 and right[0][2] == 1 and back[2][2] == 4) or
+            (up[0][2] == 1 and right[0][2] == 3 and back[2][2] == 4) or
+            (up[0][2] == 1 and right[0][2] == 4 and back[2][2] == 3)) and
+           ((up[0][0] == 4 and back[2][0] == 1 and left[0][0] == 2) or
+            (up[0][0] == 4 and back[2][0] == 2 and left[0][0] == 1) or
+            (up[0][0] == 2 and back[2][0] == 1 and left[0][0] == 4) or
+            (up[0][0] == 2 and back[2][0] == 4 and left[0][0] == 1) or
+            (up[0][0] == 1 and back[2][0] == 4 and left[0][0] == 2) or
+            (up[0][0] == 1 and back[2][0] == 2 and left[0][0] == 4));
 }
 
