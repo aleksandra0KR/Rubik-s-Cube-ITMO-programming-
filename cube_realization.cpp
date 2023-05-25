@@ -1,12 +1,13 @@
 #include "cube.h"
 #include <fstream>
 
+
 using std::ifstream;
 using std::ofstream;
 using std::endl;
 
 
-char return_letter(colors col){
+char return_letter(colors col) {
     if (col == RED) {
         return 'r';
     }
@@ -16,18 +17,18 @@ char return_letter(colors col){
     if (col == ORANGE) {
         return 'o';
     }
-    if (col == BLUE ) {
+    if (col == BLUE) {
         return 'b';
     }
     if (col == GREEN) {
-        return  'g';
+        return 'g';
     }
     if (col == YELLOW) {
         return 'y';
     }
 }
 
-colors return_clor(char col){
+colors return_clor(char col) {
     if (col == 'r') {
         return RED;
     }
@@ -37,22 +38,23 @@ colors return_clor(char col){
     if (col == 'o') {
         return ORANGE;
     }
-    if (col == 'b' ) {
-        return BLUE ;
+    if (col == 'b') {
+        return BLUE;
     }
-    if (col == 'g' ) {
-        return GREEN ;
+    if (col == 'g') {
+        return GREEN;
     }
-    if (col == 'y' ) {
+    if (col == 'y') {
         return YELLOW;
     }
 }
 
 void Cube::random_situation() {
-    int number_of_flips = rand() % 12;
-    for(int i = 0; i < number_of_flips; i++){
+    srand(time(0));
+    int number_of_flips = rand() % 50;
+    for (int i = 0; i < number_of_flips; i++) {
         int command = rand() % 12;
-        switch(command){
+        switch (command) {
             case 0 :
                 this->right_rotation_90();
                 break;
@@ -94,44 +96,54 @@ void Cube::random_situation() {
     }
 }
 
-void Cube::fill_from_the_file(const char* name_of_the_file) {
+void Cube::fill_from_the_file(const char *name_of_the_file) {
     ifstream file;
     file.open(name_of_the_file);
-        char col;
+    char col;
+    char temp[3][3];
+    for (int i = 0; i < size * 2; i++) {
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
                 file >> col;
-                front[i][j] = return_clor(col);
+                temp[i][j] = (col);
             }
         }
-    for (int i = 0; i < size; i++) {
-        for (int j = 0; j < size; j++) {
-            file >> col;
-            back[i][j] = return_clor(col);
-        }
-    }
-    for (int i = 0; i < size; i++) {
-        for (int j = 0; j < size; j++) {
-            file >> col;
-            left[i][j] = return_clor(col);
-        }
-    }
-    for (int i = 0; i < size; i++) {
-        for (int j = 0; j < size; j++) {
-            file >> col;
-            right[i][j] = return_clor(col);
-        }
-    }
-    for (int i = 0; i < size; i++) {
-        for (int j = 0; j < size; j++) {
-            file >> col;
-            up[i][j] = return_clor(col);
-        }
-    }
-    for (int i = 0; i < size; i++) {
-        for (int j = 0; j < size; j++) {
-            file >> col;
-            down[i][j] = return_clor(col);
+        if (temp[1][1] == 'r') {
+            for (int i = 0; i < size; i++) {
+                for (int j = 0; j < size; j++) {
+                    down[i][j] = return_clor(temp[i][j]);
+                }
+            }
+        } else if (temp[1][1] == 'o') {
+            for (int i = 0; i < size; i++) {
+                for (int j = 0; j < size; j++) {
+                    up[i][j] = return_clor(temp[i][j]);
+                }
+            }
+        } else if (temp[1][1] == 'y') {
+            for (int i = 0; i < size; i++) {
+                for (int j = 0; j < size; j++) {
+                    back[i][j] = return_clor(temp[i][j]);
+                }
+            }
+        } else if (temp[1][1] == 'b') {
+            for (int i = 0; i < size; i++) {
+                for (int j = 0; j < size; j++) {
+                    right[i][j] = return_clor(temp[i][j]);
+                }
+            }
+        } else if (temp[1][1] == 'w') {
+            for (int i = 0; i < size; i++) {
+                for (int j = 0; j < size; j++) {
+                    front[i][j] = return_clor(temp[i][j]);
+                }
+            }
+        } else if (temp[1][1] == 'g') {
+            for (int i = 0; i < size; i++) {
+                for (int j = 0; j < size; j++) {
+                    left[i][j] = return_clor(temp[i][j]);
+                }
+            }
         }
     }
 
@@ -141,8 +153,8 @@ void Cube::fill_from_the_file(const char* name_of_the_file) {
 
 bool Cube::has_all_colors() {
     int red = 0, white = 0, yellow = 0, blue = 0, green = 0, orange = 0;
-    for(int i = 0; i < size; i++){
-        for(auto col: front[i]){
+    for (int i = 0; i < size; i++) {
+        for (auto col: front[i]) {
             if (return_letter(col) == 'r') {
                 red++;
             }
@@ -162,7 +174,7 @@ bool Cube::has_all_colors() {
                 yellow++;
             }
         }
-        for(auto col: left[i]){
+        for (auto col: left[i]) {
             if (return_letter(col) == 'r') {
                 red++;
             }
@@ -182,7 +194,7 @@ bool Cube::has_all_colors() {
                 yellow++;
             }
         }
-        for(auto col: right[i]){
+        for (auto col: right[i]) {
             if (return_letter(col) == 'r') {
                 red++;
             }
@@ -202,7 +214,7 @@ bool Cube::has_all_colors() {
                 yellow++;
             }
         }
-        for(auto col: back[i]){
+        for (auto col: back[i]) {
             if (return_letter(col) == 'r') {
                 red++;
             }
@@ -222,7 +234,7 @@ bool Cube::has_all_colors() {
                 yellow++;
             }
         }
-        for(auto col: down[i]){
+        for (auto col: down[i]) {
             if (return_letter(col) == 'r') {
                 red++;
             }
@@ -242,7 +254,7 @@ bool Cube::has_all_colors() {
                 yellow++;
             }
         }
-        for(auto col: up[i]){
+        for (auto col: up[i]) {
             if (return_letter(col) == 'r') {
                 red++;
             }
@@ -263,17 +275,23 @@ bool Cube::has_all_colors() {
             }
         }
     }
-    if (red == 9 and white == 9 and yellow == 9 and blue == 9 and green == 9 and orange == 9)  return true;
+    if (red == 9 and white == 9 and yellow == 9 and blue == 9 and green == 9 and orange == 9) return true;
     return false;
 }
 
-bool Cube::check(){
-    bool WY = down[1][1] == RED and up[1][1] == ORANGE;
-    bool BG = left[1][1] == GREEN and right[1][1] == BLUE;
-    bool RO = front[1][1] == WHITE and back[1][1] == YELLOW;
-    return WY and BG and RO and has_all_colors();
+bool Cube::check() {
+    bool flag = true;
+    if (down[1][1] == RED) {
+        if (up[1][1] != ORANGE) flag = false;
+    }
+    if (left[1][1] == GREEN) {
+        if (right[1][1] != BLUE) flag = false;
+    }
+    if (front[1][1] == WHITE) {
+        if (back[1][1] != YELLOW) flag = false;
+    }
+    return flag and has_all_colors();
 }
-
 
 void Cube::show() {
     ofstream out("Cube.out");
@@ -300,7 +318,8 @@ void Cube::show() {
 
         for (auto col: right[i]) {
             out << return_letter(col) << " ";
-        }            out << " ";
+        }
+        out << " ";
 
         for (auto col: back[i]) {
             out << return_letter(col) << " ";
@@ -347,7 +366,8 @@ void Cube::show_to_concol() {
 
         for (auto col: right[i]) {
             cout << return_letter(col) << " ";
-        }            cout << " ";
+        }
+        cout << " ";
 
         for (auto col: back[i]) {
             cout << return_letter(col) << " ";
@@ -365,48 +385,54 @@ void Cube::show_to_concol() {
     }
 
     cout << endl;
-    /*
-    for(int i = 0; i < size; i++){
-       for (auto col: front[i]){
-            cout<<return_letter(col)<<' ';
+}
+
+bool Cube::check_solved() {
+
+    for (int i = 0; i < size; i++) {
+        for (auto col: up[i]) {
+            if (col != ORANGE) return false;
         }
-        cout<<endl;
     }
-    cout<<endl;
-    for(int i = 0; i < size; i++){
-        for (auto col: back[i]){
-            cout<<return_letter(col)<<' ';
+
+    for (int i = 0; i < size; i++) {
+        for (auto col: down[i]) {
+            if (col != RED) return false;
         }
-        cout<<endl;
     }
-    cout<<endl;
-    for(int i = 0; i < size; i++){
-        for (auto col: left[i]){
-            cout<<return_letter(col)<<' ';
+
+    for (int i = 0; i < size; i++) {
+        for (auto col: back[i]) {
+            if (col != YELLOW) return false;
         }
-        cout<<endl;
     }
-    cout<<endl;
-    for(int i = 0; i < size; i++){
-        for (auto col: right[i]){
-            cout<<return_letter(col)<<' ';
+
+    for (int i = 0; i < size; i++) {
+        for (auto col: right[i]) {
+            if (col != BLUE) return false;
         }
-        cout<<endl;
     }
-    cout<<endl;
-    for(int i = 0; i < size; i++){
-        for (auto col: up[i]){
-            cout<<return_letter(col)<<' ';
+
+    for (int i = 0; i < size; i++) {
+        for (auto col: front[i]) {
+            if (col != WHITE) return false;
         }
-        cout<<endl;
     }
-    cout<<endl;
-    for(int i = 0; i < size; i++){
-        for (auto col: down[i]){
-            cout<<return_letter(col)<<' ';
+
+    for (int i = 0; i < size; i++) {
+        for (auto col: left[i]) {
+            if (col != GREEN) return false;
         }
-        cout<<endl;
     }
-    cout<<endl;
-*/
+    return true;
+}
+
+void Cube::check_solved_answer_for_cout() {
+    if (check_solved()) cout << "Your cude is right\n";
+    else cout << "Ooops, mistake...";
+}
+
+void Cube::check_answer_for_cout() {
+    if (check()) cout << "Your cude is right and has all colers\n";
+    else cout << "Ooops, mistake...";
 }
