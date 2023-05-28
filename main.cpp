@@ -17,14 +17,22 @@ int main() {
     // решение куба
     my_cube.main_solver();
 
-    // вывод в файл
-    my_cube.show();
-
     // проверка собранного куба
     my_cube.check_solved_answer_for_cout();
 
     // вывод в консоль
     my_cube.show_to_concol();
+
+    // рандомная ситуация
+    my_cube.random_situation();
+
+    my_cube.main_solver();
+
+    // вывод в файл
+    my_cube.show();
+
+
+
     return 0;
 
 }
