@@ -1,4 +1,7 @@
 #include "cube.h"
+#include <windows.h>
+
+int sleep = 200;
 
 void Cube::right_rotation_90(){
 
@@ -41,6 +44,8 @@ void Cube::right_rotation_90(){
     right[2][2] = temp[0][2];
 
     cout << "Right rotation is completed\n";
+    display_f();
+    Sleep(sleep);
 }
 
 void Cube::right_rotation_against_90(){
@@ -84,6 +89,8 @@ void Cube::right_rotation_against_90(){
     right[2][2] = temp[2][0];
 
     cout << "Right rotation against is completed\n";
+    display_f();
+    Sleep(sleep);
 }
 
 
@@ -128,6 +135,8 @@ void Cube::left_rotation_against_90(){
     left[2][2] = temp[2][0];
 
     cout << "Left rotation against is completed\n";
+    display_f();
+    Sleep(sleep);
 }
 
 
@@ -172,6 +181,8 @@ void Cube::left_rotation_90(){
     left[2][2] = temp[0][2];
 
     cout << "Left rotation is completed\n";
+    display_f();
+    Sleep(sleep);
 }
 
 void Cube::front_rotation_90(){
@@ -214,6 +225,8 @@ void Cube::front_rotation_90(){
     front[2][2] = temp[0][2];
 
     cout << "Front rotation is completed\n";
+    display_f();
+    Sleep(sleep);
 }
 
 void Cube::front_rotation_against_90(){
@@ -256,6 +269,8 @@ void Cube::front_rotation_against_90(){
     front[2][2] = temp[2][0];
 
     cout << "Front rotation against is completed\n";
+    display_f();
+    Sleep(sleep);
 }
 
 void Cube::back_rotation_against_90(){
@@ -298,6 +313,8 @@ void Cube::back_rotation_against_90(){
     back[2][2] = temp[2][0];
 
     cout << "Back rotation against is completed\n";
+    display_f();
+    Sleep(sleep);
 }
 
 void Cube::back_rotation_90(){
@@ -341,6 +358,8 @@ void Cube::back_rotation_90(){
     back[2][2] = temp[0][2];
 
     cout << "Back rotation is completed\n";
+    display_f();
+    Sleep(sleep);
 }
 
 void Cube::down_rotation_90() {
@@ -383,6 +402,8 @@ void Cube::down_rotation_90() {
     down[2][2] = temp[0][2];
 
     cout << "down rotation is completed\n";
+    display_f();
+    Sleep(sleep);
 }
 
 void Cube::down_rotation_against_90() {
@@ -425,6 +446,8 @@ void Cube::down_rotation_against_90() {
     down[2][2] = temp[2][0];
 
     cout << "down rotation against is completed\n";
+    display_f();
+    Sleep(sleep);
 }
 
 void Cube::up_rotation_against_90() { ///
@@ -467,6 +490,8 @@ void Cube::up_rotation_against_90() { ///
     up[2][2] = temp[2][0];
 
     cout << "up rotation against is completed\n";
+    display_f();
+    Sleep(sleep);
 }
 
 void Cube::up_rotation_90() {
@@ -509,4 +534,6 @@ void Cube::up_rotation_90() {
     up[2][2] = temp[0][2];
 
     cout << "up rotation is completed\n";
+    display_f();
+    Sleep(sleep);
 }
