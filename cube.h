@@ -82,17 +82,13 @@ public:
 
     void up_rotation_against_90();
 
-    void Front_pif_paf();
+    void front_pif_paf();
 
-    void Back_pif_paf();
+    void back_pif_paf();
 
-    void Right_pif_paf();
+    void right_pif_paf();
 
-    void Left_pif_paf();
-
-    bool oneCornerCheck();
-
-    bool cornerCheck();
+    void left_pif_paf();
 
     void flower();
 
@@ -112,13 +108,13 @@ public:
 
     bool orange_cross_check();
 
-    void first_up_corner();
+    void first_corner();
 
-    void up_second_corner();
+    void second_corner();
 
-    void third_up_corner();
+    void third_corner();
 
-    void fourth_up_corner();
+    void fourth_corner();
 
     void main_solver();
 
